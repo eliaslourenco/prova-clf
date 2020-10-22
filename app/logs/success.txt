@@ -1,0 +1,2 @@
+Arquivo ./data/out/Report-Result-2020-10-22-04-54-18-000000.txt criado com sucesso!
+Arquivo ./data/out/Report-Result-2020-10-22-04-54-43-000000.txt criado com sucesso!

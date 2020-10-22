@@ -13,7 +13,6 @@ class DataFileController
     private $objModelSales;
     private $objModelCustomer;
     private $objModelSalesman;
-    private $data;
 
     public function __construct() 
     {
@@ -41,7 +40,8 @@ class DataFileController
     }
 
     /***
-     * Funcao responsavel por processar a entrada de dados do arquivo que contem os dados
+     * Funcao responsavel por processar as entradas da entidade e registrar no respectivo model
+     * 
      */
     public function processFile($file)
     {
@@ -65,11 +65,12 @@ class DataFileController
         $arrRows = explode(';', $content);
         
         if( is_array($arrRows) && count($arrRows) > 0 ) {
+            
             foreach($arrRows as $row) {
 
                 $dataRow = explode(',', $row);
 
-                $idRow = ($dataRow[0]) ? $dataRow[0] : 000;
+                $idRow = ($dataRow[0]) ? trim($dataRow[0]) : 000;
 
                 switch ($idRow) {
                     case $this->objModelCustomer->id:
@@ -81,17 +82,13 @@ class DataFileController
                     case $this->objModelSales->id:
                         $this->insertEntityRow($this->objModelSales, $dataRow);
                         break;
-                    default:
-                        $errorMsg = 'Invalid data at' . $row;
-                        LogController::writeErrorLog($errorMsg);
-                        break;
                 }
             }
         }
     }
 
     /**
-     * Recebo o objeto Entity e encaminha para inserir os dados desta linha
+     * Recebo o objeto Entity e encaminha para inserir os dado
      */
     public function insertEntityRow(Entity $objEntity, $row)
     {
@@ -106,9 +103,16 @@ class DataFileController
         $fileInfo = pathinfo($file);
         return ($fileInfo['extension'] == $format) ? true : false;
     }
-    
-    public function processData() 
-    {
-        
+
+    public function writeReportFile($output) {
+        $fileName = 'Report-Result-'.date('Y-m-d-H-i-s-u').'.txt';
+        $completePath = './data/out/' . $fileName;
+
+        $myFile = fopen($completePath, 'w');
+        fwrite($myFile, $output);
+        fclose($myFile);
+        LogController::writeSuccessLog("Arquivo {$completePath} criado com sucesso!");       
+       return $arrReturn = array('path' => $completePath, 'success' => true);
     }
+    
 }

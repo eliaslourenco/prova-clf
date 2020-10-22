@@ -14,9 +14,9 @@ class LogController
         $pathErrorFile = './app/logs/error.txt';
         
         if(is_file($pathErrorFile)){
-            
+            $at = date('Y-m-d-H-i-s-u');
             $errorFile = fopen($pathErrorFile, "a");
-            fwrite( $errorFile, $msg . '\n
+            fwrite( $errorFile, $at .' '. $msg . '
 ');
             fclose($errorFile);
         }
@@ -27,7 +27,7 @@ class LogController
         $pathSuccessFile = './app/logs/success.txt';
         if(is_file($pathSuccessFile)){
             $successFile = fopen($pathSuccessFile, "a");
-            fwrite( $successFile, $msg . '\n
+            fwrite( $successFile, $msg . '
 ');
             fclose($successFile);
         }
