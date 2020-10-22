@@ -1,5 +1,0 @@
-Quantidade de Clientes: 13
-Quantidade de Vendedores: 12
-Média Salarial dos Vendedores: R$5419,17
-ID da venda mais cara: 5
-Pior Vendedor foi o : Matheus que vendeu apenas o valor de R$1,99

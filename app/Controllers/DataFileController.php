@@ -105,7 +105,7 @@ class DataFileController
     }
 
     public function writeReportFile($output) {
-        $fileName = 'Report-Result-'.date('Y-m-d-H-i-s-u').'.txt';
+        $fileName = 'Report-Result-'.date('Y-m-d-H-i-s-u').'.done.dat';
         $completePath = './data/out/' . $fileName;
 
         $myFile = fopen($completePath, 'w');
