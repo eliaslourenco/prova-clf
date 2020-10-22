@@ -77,7 +77,7 @@ class Salesman implements Entity {
             foreach ($_SESSION['db']['sales'] as $sale) {
                 
                 if ( $sale['id_salesman'] == $key ) {
-                    $totalVendas += $sale['item']['price'];
+                    $totalVendas += $sale['item']['final_price'];
                     $qtdVendas++;
                     $_SESSION['db'][$this->entityName][$key]['total_sales'] = $totalVendas;
                     $_SESSION['db'][$this->entityName][$key]['qtd_sales'] = $qtdVendas;

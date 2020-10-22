@@ -36,7 +36,8 @@ class Sales implements Entity {
                 'id_item'   => trim($row[2][1]),
                 'dsc_item' => trim($row[2][0]),
                 'qtd'   => trim($row[2][2]),
-                'price'   => trim($row[2][3])
+                'price'   => trim($row[2][3]),
+                'final_price' => (trim($row[2][2]) * trim($row[2][3]))
             )
             ,
             'id_salesman' => trim($row[3]),
@@ -55,13 +56,13 @@ class Sales implements Entity {
             $baseData = $_SESSION['db'][$this->entityName];
 
             $itens =  array_column($baseData, 'item');            
-            $precos =  array_column($itens, 'price');
+            $precos =  array_column($itens, 'final_price');
             $moreExpensivePrice = max( $precos );
 
             foreach( $baseData as $row) {
-                if( $row['item']['price'] >= $moreExpensivePrice ){
+                if( $row['item']['final_price'] >= $moreExpensivePrice ){
                     $moreExpensive = $row;
-                    $moreExpensivePrice = $row['item']['price'];
+                    $moreExpensivePrice = $row['item']['final_price'];
                 }
             }
             return $moreExpensive;

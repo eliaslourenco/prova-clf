@@ -1,1 +1,7 @@
 2020-10-22-11-16-25-000000 Erro de formato, somente arquivos .dat serão processados, referente ao arquivo./data/in/dataset_with_invalid_format.pdf
+2020-10-22-11-48-57-000000 Erro de formato, somente arquivos .dat serão processados, referente ao arquivo./data/in/dataset_with_invalid_format.pdf
+2020-10-22-11-49-02-000000 Erro de formato, somente arquivos .dat serão processados, referente ao arquivo./data/in/dataset_with_invalid_format.pdf
+2020-10-22-11-51-08-000000 Erro de formato, somente arquivos .dat serão processados, referente ao arquivo./data/in/dataset_with_invalid_format.pdf
+2020-10-22-11-51-18-000000 Erro de formato, somente arquivos .dat serão processados, referente ao arquivo./data/in/dataset_with_invalid_format.pdf
+2020-10-22-11-51-45-000000 Erro de formato, somente arquivos .dat serão processados, referente ao arquivo./data/in/dataset_with_invalid_format.pdf
+2020-10-22-11-51-55-000000 Erro de formato, somente arquivos .dat serão processados, referente ao arquivo./data/in/dataset_with_invalid_format.pdf

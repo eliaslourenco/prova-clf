@@ -1,1 +1,3 @@
-Arquivo ./data/out/Report-Result-2020-10-22-11-16-25-000000.done.dat criado com sucesso!
+Arquivo ./data/out/Report-Result-2020-10-22-11-16-25-000000.done.dat criado com sucesso!Arquivo ./data/out/Report-Result-2020-10-22-11-51-18-000000.done.dat criado com sucesso!
+Arquivo ./data/out/Report-Result-2020-10-22-11-51-45-000000.done.dat criado com sucesso!
+Arquivo ./data/out/Report-Result-2020-10-22-11-51-55-000000.done.dat criado com sucesso!
