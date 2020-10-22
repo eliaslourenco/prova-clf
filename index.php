@@ -2,14 +2,14 @@
 
 use app\Controllers\DataFileController;
 use app\Controllers\ReportController;
-
+// Start na aplication
 include_once('app/App.php');
 
-// Instancio meus objetos reponsaveis por processar os arquivos e pelo responsavel por gerar o relatorio
+// Instancio meus objetos reponsaveis por processar os arquivos e gerar o relatorio
 $objDataFiles  = new DataFileController();
 $objReport = new ReportController();
 
-// Leio e armazeno os dados dos arquivos .dat
+// Leio, valido e armazeno os dados dos arquivos .dat
 $objDataFiles->readFiles();
 
 // Realiza a analise solicitada e retorna os dados experados
@@ -22,7 +22,5 @@ $writeResult = $objDataFiles->writeReportFile($output);
 $created = (isset($writeResult['success'])) ? $writeResult['success'] == 1 : 0;
 
 if($created) {
-  
     die("Relatório gerado com sucesso: {$output}\nDisponível no arquivo: ". $writeResult['path']);
-  
 }
